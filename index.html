@@ -186,7 +186,7 @@ textarea{width:100%;max-width:420px;height:34svh;background:#0007;color:#fff;bor
 const PIN_HASH='cbdd93926c2b89eba3312a7e10ac06089c8123872684f4f910f88a8ae7559556',SALT='anu-',BG_VOL=.6,SYNC=/[?&]sync/.test(location.search);
 const REASONS=["You remember the little things I forget","The world is kinder with you in it","You make ordinary days feel special","You believed in me when I didn't","Your laugh is my favourite sound"];
 const WORDS=["Smiles","Laughter","Joy","Love","Dreams","Magic"];
-const LETTER=["Happy Birthday, my love.","Finally, a personal new year for you. I hope you achieve great things in the year ahead. Your journey might not be easy; it may be filled with problems and sorrows, but I wish you will keep moving forward without giving up. I know you have the potential. Just remember that if you ever need help, don't hesitate to come to me. I would love to be your greatest supporter. I wish that every second you live is beautiful. I love you, and I will always be with you."];
+const LETTER=["Happy Birthday, my love.","Finally, a personal new year for you. I hope you achieve great things in the year ahead. Your journey might not be easy; it may be filled with problems and sorrows, but I wish you will keep moving forward without giving up. I know you have the potential. Just remember that if you ever need help, don't hesitate to come to me. I would love to be your greatest supporter. I wish that every second you live is beautiful. I love you, and I will always be with you.<br>With all Love, Yours<br>Dhananjay"];
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)],sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const HT='<svg class="hr"><use href="#ht"/></svg>',ARROW='<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 const stage=$('#stage');let cur=$('#gate');
@@ -306,7 +306,7 @@ const ws=$$('.w',ps),t0=performance.now(),iv=setInterval(()=>{if(user)return;con
 const total=(.5+k*.085+.6)*1000;let shown=false;const done=()=>{if(shown)return;shown=true;clearInterval(iv);const g=document.createElement('button');g.className='go';g.setAttribute('aria-label','continue');g.innerHTML=ARROW;g.onclick=e=>{e.stopPropagation();finale()};gw.append(g);if(!user)setTimeout(()=>g.scrollIntoView({behavior:'smooth',block:'center'}),100)};
 setTimeout(done,total);ps.onclick=()=>{$$('.w',ps).forEach(w=>{w.style.animation='wi .2s forwards';w.style.animationDelay='0s'});setTimeout(done,350)}}})}
 /* ===== 9. FINALE ===== */
-function finale(){show(`<div class=rays></div><svg class=bigheart viewBox="0 0 24 24"><use href="#ht"/></svg><h1 class=fin>Happy Birthday,<br>Anu</h1><p class=sub style="animation:in 1s 1.2s both">Dhananjay made this little world just for you.<br>Tap anywhere for sparkles.</p><button class="btn hid" id=nx>One more thing ${ARROW}</button>`,'#3a0d3a','#e0568a',s=>{
+function finale(){show(`<div class=rays></div><svg class=bigheart viewBox="0 0 24 24"><use href="#ht"/></svg><h1 class=fin>Happy Birthday,<br>Anu</h1><p class=sub style="animation:in 1s 1.2s both">I made this little world just for you.<br>Tap anywhere for sparkles.</p><button class="btn hid" id=nx>One more thing ${ARROW}</button>`,'#3a0d3a','#e0568a',s=>{
 sfx('cheer');[.2,.5,.8].forEach((k,i)=>setTimeout(()=>confetti(innerWidth*k,innerHeight*.4,55),i*300));
 s.onpointerdown=e=>{if(!e.target.closest('button')){confetti(e.clientX,e.clientY,24);sfx('like')}};setTimeout(()=>$('#nx',s).classList.remove('hid'),3000);$('#nx',s).onclick=player})}
 /* ===== 10. PERFECT PLAYER ===== */
