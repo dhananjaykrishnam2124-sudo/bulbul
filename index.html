@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#12061f"><title>For Anu</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;700&family=Lora:wght@500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--c1:#3a1250;--c2:#8a2f6f;--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;--sans:Manrope,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--gold:linear-gradient(135deg,#fff1c9,#f3c56b 55%,#e39a52)}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -121,10 +121,13 @@ figcaption{font:700 11px var(--sans);letter-spacing:.24em;padding:10px 0 2px;tex
 .tapme{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#ffffffcc;animation:fl 2s ease-in-out infinite;transition:opacity .4s}
 .spr{position:absolute;font-size:18px;z-index:6;pointer-events:none;animation:spr 1.6s forwards}
 @keyframes spr{from{opacity:0;transform:translate(0,0) scale(.4)}20%{opacity:1}to{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.2) rotate(var(--r))}}
-.paper{position:relative;width:100%;max-width:430px;margin:8px auto 24px;flex:none;background-color:#fffefa;background-image:repeating-linear-gradient(transparent 0 calc(1.7em - 1px),#d8dde4 calc(1.7em - 1px) 1.7em);background-origin:content-box;color:#2b2420;border-radius:8px;padding:34px 26px 28px;text-align:left;box-shadow:0 26px 70px #000b,0 0 0 1px #ffffff55;animation:cardin .9s cubic-bezier(.2,1,.3,1) both;font-family:var(--serif);font-weight:600;font-size:clamp(20px,5.6vw,23px);line-height:1.7}
-@keyframes cardin{from{opacity:0;transform:translateY(70px) scale(.7)}}
-.paper p{margin-bottom:1.7em}.gw{display:flex;justify-content:center;margin-top:6px}.w{opacity:0;filter:blur(5px);display:inline-block;animation:wi .55s forwards;white-space:pre}
-@keyframes wi{to{opacity:1;filter:none}}
+.lp{position:relative;width:min(420px,90vw);max-height:68dvh;flex:none;overflow:auto;margin:8px auto 0;padding:30px 28px 26px;border-radius:8px;text-align:left;background:repeating-linear-gradient(#fff9ec 0 31px,#eadcbc 31px 32px);background-position:0 12px;color:#4d3226;box-shadow:0 30px 70px #000000a0,inset 0 0 0 1px #f3c67766;scrollbar-width:none;animation:lpin .9s cubic-bezier(.22,1,.36,1) both}
+.lp::-webkit-scrollbar{display:none}@keyframes lpin{from{opacity:0;transform:translateY(40px) scale(.94)}}
+.lp h3{margin:0 0 8px;font:700 26px/32px 'Playfair Display',Georgia,serif;color:#7a4a10}
+.lp p{max-width:none;opacity:1;font:500 17.5px/32px Lora,Georgia,serif;margin:0 0 32px;color:#4d3226}
+.lwd{display:inline-block;white-space:nowrap}.lch{animation:link 1.4s ease-out both}@keyframes link{from{color:#e8982f;opacity:0}to{color:#4d3226;opacity:1}}
+.lsig{font:600 18px/1.5 'Playfair Display',Georgia,serif;color:#7a4a10;text-align:right;opacity:0;transition:opacity 1.2s}.lsig.on{opacity:1}
+.lbt{min-height:60px;display:flex;align-items:center;justify-content:center;margin-top:10px}.lsk{background:none;border:0;color:#ffffffa6;font:500 13px Manrope,sans-serif;cursor:pointer;padding:6px 14px}
 .go{width:52px;height:52px;border-radius:50%;border:0;background:var(--gold);box-shadow:0 8px 22px #e39a5288;display:grid;place-items:center;cursor:pointer;animation:in .6s both}
 .go svg{width:22px;height:22px;fill:none;stroke:#4a2d22;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 /* finale */
@@ -186,7 +189,7 @@ textarea{width:100%;max-width:420px;height:34svh;background:#0007;color:#fff;bor
 const PIN_HASH='cbdd93926c2b89eba3312a7e10ac06089c8123872684f4f910f88a8ae7559556',SALT='anu-',BG_VOL=.6,SYNC=/[?&]sync/.test(location.search);
 const REASONS=["You remember the little things I forget","The world is kinder with you in it","You make ordinary days feel special","You believed in me when I didn't","Your laugh is my favourite sound"];
 const WORDS=["Smiles","Laughter","Joy","Love","Dreams","Magic"];
-const LETTER=["Happy Birthday, my love.","Finally, a personal new year for you. I hope you achieve great things in the year ahead. Your journey might not be easy; it may be filled with problems and sorrows, but I wish you will keep moving forward without giving up. I know you have the potential. Just remember that if you ever need help, don't hesitate to come to me. I would love to be your greatest supporter. I wish that every second you live is beautiful. I love you, and I will always be with you.<br>With all Love, Yours<br>Dhananjay"];
+const LETTER=["Happy Birthday,","Finally, a personal new year for you. I hope you achieve great things in the year ahead. Your journey might not be easy; it may be filled with problems and sorrows, but I wish you will keep moving forward without giving up. I know you have the potential. Just remember that if you ever need help, don't hesitate to come to me. I would love to be your greatest supporter. I wish that every second you live is beautiful. I love you, and I will always be with you.<br>With all Love, Yours<br>Dhananjay"];
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)],sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const HT='<svg class="hr"><use href="#ht"/></svg>',ARROW='<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 const stage=$('#stage');let cur=$('#gate');
@@ -298,13 +301,11 @@ const lt=$('#lt',s);let busy=false;lt.onclick=async()=>{if(busy)return;busy=true
 ['🎂','🎈','✨','💛','🎈','🎉'].forEach((e,i)=>setTimeout(()=>{const p=document.createElement('span');p.className='spr';p.textContent=e;p.style.cssText=`left:${25+i*10}%;top:30%;--dx:${(i%2?1:-1)*(20+i*8)}px;--dy:-${60+i*14}px;--r:${(i%2?1:-1)*30}deg`;lt.append(p);setTimeout(()=>p.remove(),1700)},500+i*140));
 await sleep(1900);lt.classList.add('gone');$('#tp',s).remove();[...s.children].forEach(c=>{c.style.transition='opacity .45s';c.style.opacity=0});await sleep(500);
 [...s.children].forEach(c=>c.remove());
-const ps=document.createElement('div');ps.className='paper';let k=0;ps.innerHTML=LETTER.map(t=>`<p>${t.split(/( )/).map(w=>w==' '?' ':`<span class=w style="animation-delay:${(.5+k++*.085).toFixed(2)}s">${w}</span>`).join('')}</p>`).join('');
-const gw=document.createElement('div');gw.className='gw';ps.append(gw);s.append(ps);s.scrollTop=0;
-/* the whole screen scrolls, so the paper and its text move together; the view follows the writing until she scrolls herself */
-let user=false;['touchstart','wheel'].forEach(ev=>s.addEventListener(ev,()=>user=true,{once:true,passive:true}));
-const ws=$$('.w',ps),t0=performance.now(),iv=setInterval(()=>{if(user)return;const i=Math.floor(((performance.now()-t0)/1000-.5)/.085);if(i<0)return;if(i>ws.length+3){clearInterval(iv);return}const r=ws[Math.min(i,ws.length-1)].getBoundingClientRect(),lim=innerHeight-120;if(r.bottom>lim)s.scrollBy({top:r.bottom-lim+50,behavior:'smooth'})},180);
-const total=(.5+k*.085+.6)*1000;let shown=false;const done=()=>{if(shown)return;shown=true;clearInterval(iv);const g=document.createElement('button');g.className='go';g.setAttribute('aria-label','continue');g.innerHTML=ARROW;g.onclick=e=>{e.stopPropagation();finale()};gw.append(g);if(!user)setTimeout(()=>g.scrollIntoView({behavior:'smooth',block:'center'}),100)};
-setTimeout(done,total);ps.onclick=()=>{$$('.w',ps).forEach(w=>{w.style.animation='wi .2s forwards';w.style.animationDelay='0s'});setTimeout(done,350)}}})}
+const ps=document.createElement('div');ps.className='lp';ps.innerHTML='<h3>Dear Anu,</h3><div class=ltx></div><div class=lsig>With all my love,<br>— Dhananjay</div>';
+const tx=$('.ltx',ps),sg=$('.lsig',ps),bt=document.createElement('div');bt.className='lbt';bt.innerHTML='<button class=lsk>Skip</button>';s.append(ps,bt);s.scrollTop=0;
+let skip=false;$('.lsk',bt).onclick=()=>skip=true;await sleep(900);
+for(const para of LETTER){const p=document.createElement('p');tx.append(p);for(const w of para.split(' ')){const ws=document.createElement('span');ws.className='lwd';p.append(ws);for(const ch of w){const c=document.createElement('span');c.className='lch';c.textContent=ch;ws.append(c);if(!skip)await sleep(30)}p.append(' ');ps.scrollTo({top:ps.scrollHeight,behavior:skip?'auto':'smooth'})}if(!skip)await sleep(500)}
+sg.classList.add('on');ps.scrollTo({top:ps.scrollHeight,behavior:'smooth'});bt.innerHTML='<button class=btn id=lgo>Continue</button>';$('#lgo',bt).onclick=()=>finale()}})}
 /* ===== 9. FINALE ===== */
 function finale(){show(`<div class=rays></div><svg class=bigheart viewBox="0 0 24 24"><use href="#ht"/></svg><h1 class=fin>Happy Birthday,<br>Anu</h1><p class=sub style="animation:in 1s 1.2s both">I made this little world just for you.<br>Tap anywhere for sparkles.</p><button class="btn hid" id=nx>One more thing ${ARROW}</button>`,'#3a0d3a','#e0568a',s=>{
 sfx('cheer');[.2,.5,.8].forEach((k,i)=>setTimeout(()=>confetti(innerWidth*k,innerHeight*.4,55),i*300));
